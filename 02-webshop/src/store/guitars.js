@@ -1,17 +1,19 @@
 import { ref } from 'vue'
+import { useToast } from 'vue-toastification'
 
+const toast = useToast()
 const guitars = ref([])
 
 export function useGuitarStore() {
     async function fetchGuitars() {
         try {
-            const response = await fetch('http://localhost:3001/guitars')
+            const response = await fetch('http://localhost:3001/guitar')
             if (!response.ok) {
                 throw new Error('Failed to fetch guitars')
             }
             guitars.value = await response.json()
         } catch (error) {
-            console.log(error)
+            toast.error(error.message)
         }
     }
     return  {
