@@ -4,7 +4,7 @@ import { RouterLink } from 'vue-router';
 
 <template>
     <nav class="nav">
-        <ul>
+        <ul class="nav_list">
             <li>
                 <!-- <a href="http://"></a> -->
                  <router-link :to="{ name: 'guitarsList'}">Guitars</router-link>
@@ -21,5 +21,11 @@ import { RouterLink } from 'vue-router';
 <style scoped>
 .nav {
     background: var(--dark);
+}
+
+.nav_list {
+    padding: 1rem 0;
+    display: flex;
+    justify-content: space-evenly;
 }
 </style>
