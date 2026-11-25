@@ -1,8 +1,20 @@
-<script setup></script>
+<script setup>
+import GuitarImage from './GuitarImage.vue';
+defineProps({
+    guitar: {
+        type: Object,
+        required: true
+    }
+})
+
+</script>
 
 <template>
     <div>
-        Guitar
+        <div class="left-column">
+            <GuitarImage :title="guitar.title"/>
+        </div>
+        <div class="left-column"></div>
     </div>
 </template>
 
